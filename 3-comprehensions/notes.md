@@ -31,3 +31,5 @@ This is an awesome definition/explanation:
 
 * Read about __eq__ and __hash__ object methods
 * all functions are < all lists    >:(
+  * ohh maybe so they'll be sorted to the beginning of a list
+
