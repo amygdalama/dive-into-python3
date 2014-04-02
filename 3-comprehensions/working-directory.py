@@ -25,3 +25,6 @@ import from_import_test
 
 # So changing os.chdir doesn't change the import search path
 # but it does change the directory for opening files
+
+# This works if you insert '.' to beginning of sys.path - i.e. '.' will
+# dynamically change when you change working directories
