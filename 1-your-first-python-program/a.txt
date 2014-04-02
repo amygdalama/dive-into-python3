@@ -1,0 +1,1 @@
+This is a file used in chapter 3 for testing to see if changing the working directory via os.chdir changes the directory for opening files.
