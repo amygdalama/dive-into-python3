@@ -23,6 +23,6 @@
 
 4. You can do:
     
-    multiple = 1024 if a_kilobyte_is_1024_bytes else 1000
+        multiple = 1024 if a_kilobyte_is_1024_bytes else 1000
 
 Cool! I didn't know that!

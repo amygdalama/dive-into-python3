@@ -4,11 +4,11 @@
 
 I didn't know these things about `os`!:
 
-* os.path
-* os.getcwd()
-* os.chdir()
+* `os.path`
+* `os.getcwd()`
+* `os.chdir()`
 
-Does os.chdir() also add the new current working directory to the front of the import path? Nope. Tested using `working-directory.py`.
+Does `os.chdir()` also add the new current working directory to the front of the `import` path? Nope. Tested using `working-directory.py`.
 
 Whoa!:
 
@@ -23,13 +23,10 @@ This is an awesome definition/explanation:
 > A list comprehension provides a compact way of mapping a list into another list by applying a function to each of the elements of the list.
 
 
-
-
-
-
 ##Notes from Tom Club
 
-* Read about __eq__ and __hash__ object methods
-* all functions are < all lists    >:(
+* Read about `__eq__` and `__hash__` object methods
+* all functions are `<` all lists    >:(
   * ohh maybe so they'll be sorted to the beginning of a list
+* Rob's cool attribute/method recursion thing, i.e. `c.a.b.a.b.a.b.a.b.a.b.`, see `a.py`, `b.py`, `c.py`
 
