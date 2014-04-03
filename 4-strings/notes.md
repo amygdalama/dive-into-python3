@@ -40,9 +40,8 @@ I had some difficulty understanding this section.
 
     This is more familiar to me:
 
-        ```
         >>> "%s's password is %s" % (username, password)
-        ```
+
 
     Are they equivalent?
 
