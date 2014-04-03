@@ -19,6 +19,29 @@ I had some difficulty understanding this section.
 
     What does "constant time" mean? Is this related to big-O notation?
 
+    Why does the Nth character start at the 4xNth byte? Ah, I think it's because each character takes up 4 bytes. So this statement (the Nth character starts at the MxNth byte) is true for any M... So why is this an advantage of the UTF-32 system? Isn't it an advantage of *any* system with a constant number of bytes per character?
+    Oh, I see. If you have a 2-byte per character system (i.e. UTF 16), then you don't have enough spaces for characters. So characters that are rarely used take up more bytes! So you can assume *most of the time* that characters are two bytes and that the Nth character of a string starts at the 2xNth byte, *except when the string has a rare "astral plane" character.*
+
+3. Big-endian vs Little-endian
+    
+    > But there are also non-obvious disadvantages to both UTF-32 and UTF-16. Different computer systems store individual bytes in different ways. That means that the character U+4E2D could be stored in UTF-16 as either 4E 2D or 2D 4E, depending on whether the system is big-endian or little-endian.
+
+    I should figure out what this means.
+
+## Formatting Strings
+
+1. I'm not super familiar with the syntax:
+
+    >>> username = 'mark'
+    >>> password = 'papayawhip'
+    >>> "{0}'s password is {1}".format(username, password)
+  
+  This is more familiar to me:
+
+    >>> "%s's password is %s" % (username, password)
+
+  Are they equivalent?
+
 
 ## A digression on `sys.getsizeof`
 
