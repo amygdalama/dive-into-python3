@@ -38,7 +38,7 @@ I had some difficulty understanding this section.
     >>> "{0}'s password is {1}".format(username, password)
     ```
 
-  This is more familiar to me:
+This is more familiar to me:
 
     ```
     >>> "%s's password is %s" % (username, password)
