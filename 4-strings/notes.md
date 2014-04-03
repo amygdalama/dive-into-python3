@@ -32,13 +32,17 @@ I had some difficulty understanding this section.
 
 1. I'm not super familiar with the syntax:
 
+    ```
     >>> username = 'mark'
     >>> password = 'papayawhip'
     >>> "{0}'s password is {1}".format(username, password)
-  
+    ```
+
   This is more familiar to me:
 
+    ```
     >>> "%s's password is %s" % (username, password)
+    ```
 
   Are they equivalent?
 
@@ -47,6 +51,7 @@ I had some difficulty understanding this section.
 
 1. Why does this happen?
 
+    ```
     >>> l = [1]
     >>> sys.getsizeof(l)
     80
@@ -54,7 +59,7 @@ I had some difficulty understanding this section.
     >>> l.append(1)
     >>> sys.getsizeof(l)
     104
-
+    ```
 
 ## Related Links
 
