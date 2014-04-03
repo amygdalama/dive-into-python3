@@ -45,6 +45,18 @@ I had some difficulty understanding this section.
 
     Are they equivalent?
 
+    Oh, a cool thing you can do with {} but not %s (or maybe I'm not clever enough to figure out how to do this with %s):
+
+        >>> suffixes = ['KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
+        >>> '1000'{0[0]} = 1{0[1]}'.format(suffixes)
+
+    To do that with %s I think you'd have to:
+
+        >>> '1000%s = 1%s' % (suffixes[0], suffixes[1])
+
+    Maybe the second one is easier to read, though
+    Or maybe I just think that 'cause I'm used to it
+
 
 ## A digression on `sys.getsizeof`
 
@@ -65,3 +77,4 @@ I had some difficulty understanding this section.
 * http://www.joelonsoftware.com/articles/Unicode.html
 * https://www.youtube.com/watch?v=MijmeoH9LT4
 * http://nedbatchelder.com/text/unipain.html
+* (somewhat related, on lists): http://effbot.org/zone/python-list.htm
