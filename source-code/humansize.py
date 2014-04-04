@@ -38,8 +38,11 @@ def approximate_size(size, a_kilobyte_is_1024_bytes=True):
     raise ValueError('number too large')
 
 if __name__ == '__main__':
-    print(approximate_size(1000000000000, False))
-    print(approximate_size(1000000000000))
+    for key in globals().keys():
+        print "{0}: {1}".format(key, globals()[key])
+
+    # print(approximate_size(1000000000000, False))
+    # print(approximate_size(1000000000000))
 
 # Copyright (c) 2009, Mark Pilgrim, All rights reserved.
 # 

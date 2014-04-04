@@ -45,7 +45,7 @@ I had some difficulty understanding this section.
 
     Are they equivalent?
 
-    Oh, a cool thing you can do with {} but not %s (or maybe I'm not clever enough to figure out how to do this with %s):
+    Compound field names: Oh, a cool thing you can do with {} but not %s (or maybe I'm not clever enough to figure out how to do this with %s):
 
         >>> suffixes = ['KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
         >>> '1000'{0[0]} = 1{0[1]}'.format(suffixes)
@@ -56,6 +56,57 @@ I had some difficulty understanding this section.
 
     Maybe the second one is easier to read, though
     Or maybe I just think that 'cause I'm used to it
+
+    Even more of a whoa:
+
+        >>> import humansize
+        >>> import sys
+        >>> '1MB = 1000{0.modules[humansize].SUFFIXES[1000][0]}'.format(sys)
+        '1MB = 1000KB'
+
+    This is equivalent to accessing the humansize module through sys.modules like so:
+
+        >>> sys.modules['humansize'].SUFFIXES[1000][0]
+
+    Note that in the compound field name example, `humansize` isn't in quotes. Apparently:
+
+    > The rules for parsing an item key are very simple. If it starts with a digit, then it is treated as a number, otherwise it is used as a string.
+
+    So can you not have keys in a dictionary that start with a digit but are actually a string? Let's test:
+
+        >>> d = { '1' : 'string', 1 : 'int'}
+        >>> d
+        {'1': 'string', 1: 'int'}
+        >>> "{0[1]}".format(d) 
+        'int'
+        >>> d2 = {'1' : 'string', '2' : 'string again'}
+        >>> "{0[1]}".format(d2)
+        Traceback (most recent call last):
+          File "<stdin>", line 1, in <module>
+        KeyError: 1
+
+    But this works:
+
+        >>> d3 = {'a' : 'a string', 'b' : 'b string'}
+        >>> "{0[a]}".format(d3)
+        'a string'
+
+## Other Common String Methods
+
+Holy shit you can `dict(a_list_of_lists)`:
+    
+    >>> query = 'user=pilgrim&database=master&password=PapayaWhip'
+    >>> pairs = query.split('&')
+    >>> pairs
+    ['user=pilgrim', 'database=master', 'password=PapayaWhip']
+    >>> pairs = [pair.split('=',1) for pair in pairs]
+    >>> pairs
+    [['user', 'pilgrim'], ['database', 'master'], ['password', 'PapayaWhip']]
+    >>> d = dict(pairs)
+    >>> d
+    {'user': 'pilgrim', 'password': 'PapayaWhip', 'database': 'master'}    
+
+## Strings vs Bytes
 
 
 ## A digression on `sys.getsizeof`
@@ -72,9 +123,11 @@ I had some difficulty understanding this section.
     104
     ```
 
-## Related Links
+## Related Links/Further Reading
 
 * http://www.joelonsoftware.com/articles/Unicode.html
 * https://www.youtube.com/watch?v=MijmeoH9LT4
 * http://nedbatchelder.com/text/unipain.html
 * (somewhat related, on lists): http://effbot.org/zone/python-list.htm
+* More on advanced string formatting: http://legacy.python.org/dev/peps/pep-3101/
+* Format Specification Mini-Language: https://docs.python.org/3.1/library/string.html#format-specification-mini-language
