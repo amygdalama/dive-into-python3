@@ -11,7 +11,7 @@ def valid_roman_numeral(s):
     Keyword arguments:
     s -- string of characters
 
-    Returns: boolean -- True if s is a valid Roman numeral
+    Returns: Match object if s is a valid Roman numeral and None otherwise
     """
     
     s = s.upper()
