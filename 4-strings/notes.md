@@ -131,3 +131,14 @@ Holy shit you can `dict(a_list_of_lists)`:
 * (somewhat related, on lists): http://effbot.org/zone/python-list.htm
 * More on advanced string formatting: http://legacy.python.org/dev/peps/pep-3101/
 * Format Specification Mini-Language: https://docs.python.org/3.1/library/string.html#format-specification-mini-language
+
+## Notes from Tom Club
+
+* Python struct module is cool
+    
+    >>> import struct
+    >>> struct.pack('I', 517)
+    b'\x05\x02\x00\x00'
+
+
+
