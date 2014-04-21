@@ -9,12 +9,14 @@ def fib_generator(max_num):
 
 [f for f in fib_generator(100)]
 
-def fib_recursion(max_num, series=[1,1]):
+def fib_recursion(max_num, series=None):
+    if not series:
+        series = [1, 1]
     if series[-1] > max_num:
         return series[:-1]
     else:
-        series.append(series[-1] + series [-2])
-        return fib_recursion(max_num)
+        series.append(series[-1] + series[-2])
+        return fib_recursion(max_num, series)
 
 def fib_while(max_num, series=[1,1]):
     while series[-1] < max_num:
